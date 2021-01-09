@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Time Complexity is O(N^2), where N is the length of the arr.
+# Time Complexity is O(N^2), where N is the length of the list.
 # Space is O(1).
 
 from typing import List
@@ -22,18 +22,6 @@ def select_sort(arr: List) -> None:
         None
     """
 
-    # for O(N) best case
-    is_arr_sorted: bool = True
-
-    for i in range(len(arr) - 1):
-        if arr[i] > arr[i + 1]:
-            is_arr_sorted = False
-            break
-
-    if is_arr_sorted:
-        print("We hit the best case with O(N)")
-        print("arr: ", arr)
-        return
 
     for i in range(len(arr)):
         minIndex = i
