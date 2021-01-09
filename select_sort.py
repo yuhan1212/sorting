@@ -5,7 +5,8 @@
 
 from typing import List
 
-arr = [5,3,8,1,9,6]
+arr = [5, 3, 8, 1, 9, 6]
+
 
 def select_sort(arr: List) -> None:
     """
@@ -35,15 +36,16 @@ def select_sort(arr: List) -> None:
         return
 
     for i in range(len(arr)):
-        minIndex = i  
+        minIndex = i
         for j in range(i + 1, len(arr), 1):
             if arr[j] < arr[minIndex]:
                 minIndex = j
         temp = arr[i]
         arr[i] = arr[minIndex]
         arr[minIndex] = temp
-    
+
     print("arr is ", arr)
+
 
 select_sort(arr)
 select_sort([1, 5, 7, 0, -1, 88888, 0.8])

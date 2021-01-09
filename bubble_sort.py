@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-# Time Complexity is O(N^2), where N is the len(arr).
+# The worst and average time complexity is O(N^2), where N is the length of the list.
+# The best time complexity is O(N), where N is the length of the already sorted list.
 # Space is O(1).
 
 from typing import List
@@ -22,27 +23,23 @@ def bubble_sort(arr: List) -> None:
     Return:
         None
     """
-
-    # For the O(N) best case
-    is_arr_sorted: bool = True
-
-    for i in range(len(arr) - 1):
-        if arr[i] > arr[i + 1]:
-            is_arr_sorted = False
-            break
-
-    if is_arr_sorted:
-        print("We hit the best case with O(N)")
-        print("arr: ", arr)
-        return
+    no_swap_happen: bool = True
 
     # Bubble sort
     for j in range(len(arr) - 1):
         for i in range(len(arr) - j - 1):
+
             if arr[i] > arr[i + 1]:
+                no_swap_happen = False
                 temp = arr[i]
                 arr[i] = arr[i + 1]
                 arr[i + 1] = temp
+
+            if j == 0 and i == len(arr) - 2 and no_swap_happen is True:
+                print("We hit the best case with O(N)")
+                print("arr: ", arr)
+                return
+
     print("arr: " + str(arr))
 
 
