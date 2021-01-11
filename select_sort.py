@@ -20,6 +20,7 @@ def select_sort(arr: List) -> None:
 
     Return:
         None
+        
     """
 
 
